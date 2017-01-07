@@ -13,11 +13,13 @@ import org.elasticsearch.client.ResponseListener;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 
-public class ElasticRxClient {
+public class ElasticRxClient implements Closeable {
 
     public static final String PATH_ROOT = "/";
     private final RestClient restClient;
@@ -90,5 +92,10 @@ public class ElasticRxClient {
             return PATH_ROOT + path;
         }
         return path;
+    }
+
+    @Override
+    public void close() throws IOException {
+        restClient.close();
     }
 }
