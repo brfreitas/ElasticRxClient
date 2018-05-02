@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.brfreitas.elastic</groupId>
-    <artifactId>rx</artifactId>
+    <groupId>io.github.brfreitas</groupId>
+    <artifactId>elastic.rx</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>io.github.brfreitas.elastic:rx</name>
+    <name>io.github.brfreitas:elastic.rx</name>
     <description>This project is based on https://github.com/igor-kupczynski/ElasticRxClient
     and updates the dependencies</description>
     <url>http://brfreitas.github.io</url>
