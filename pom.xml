@@ -7,6 +7,18 @@
     <groupId>io.github.brfreitas.elastic</groupId>
     <artifactId>rx</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>io.github.brfreitas.elastic:rx</name>
+    <description>This project is based on https://github.com/igor-kupczynski/ElasticRxClient
+    and updates the dependencies</description>
+    <url>http://brfreitas.github.io</url>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
 
     <properties>
         <elasticsearch.client.version>6.2.4</elasticsearch.client.version>
