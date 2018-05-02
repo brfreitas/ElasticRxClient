@@ -1,4 +1,4 @@
-package info.kupczynski.elastic.rx;
+package io.github.brfreitas.elastic.rx;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +19,7 @@ public class ElasticRxClientExampleIntegrationTest {
     public static final String SHAKESPEARE_INDEX_NAME = "shakespeare";
     public static final String SHAKESPEARE_INDEX_DEFINITION = "{\n" +
             "  \"mappings\": {\n" +
-            "    \"_default_\": {\n" +
+            "    \"_doc\": {\n" +
             "      \"properties\": {\n" +
             "        \"speaker\": {\n" +
             "          \"type\": \"keyword\"\n" +
@@ -43,7 +43,7 @@ public class ElasticRxClientExampleIntegrationTest {
             "    }\n" +
             "  }\n" +
             "}";
-    public static final String SHAKESPEARE_TYPE_LINE = "line";
+    public static final String SHAKESPEARE_TYPE_LINE = "_doc";
 
     private ElasticRxClient client;
 
@@ -65,7 +65,7 @@ public class ElasticRxClientExampleIntegrationTest {
         ).blockingGet();
 
         assertThat(indexCreated.code(), is(200));
-        assertThat(indexCreated.body(), is(Optional.of("{\"acknowledged\":true,\"shards_acknowledged\":true}")));
+        assertThat(indexCreated.body(), is(Optional.of("{\"acknowledged\":true,\"shards_acknowledged\":true,\"index\":\"shakespeare\"}")));
 
         String aDoc = "{" +
                 "\"line_id\":55783," +
@@ -80,11 +80,12 @@ public class ElasticRxClientExampleIntegrationTest {
                 aDoc).blockingGet();
 
         assertThat(docIndexed.code(), is(201));
-        assertThat(docIndexed.body().get(), containsString("\"created\":true"));
+        assertThat(docIndexed.body().get(), containsString("\"result\":\"created\""));
 
 
         String query = "{\"query\": {\"match_all\": {}}}";
-        ElasticResponse searchResult = client.request(Method.GET, SHAKESPEARE_INDEX_NAME + "/_search", query)
+        ElasticResponse searchResult = client
+                .request(Method.GET, SHAKESPEARE_INDEX_NAME + "/_search", query)
                 .blockingGet();
 
         assertThat(searchResult.code(), is(200));

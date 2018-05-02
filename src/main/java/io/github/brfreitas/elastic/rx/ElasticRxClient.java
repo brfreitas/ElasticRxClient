@@ -1,4 +1,4 @@
-package info.kupczynski.elastic.rx;
+package io.github.brfreitas.elastic.rx;
 
 import io.reactivex.Single;
 import org.apache.http.HttpHost;

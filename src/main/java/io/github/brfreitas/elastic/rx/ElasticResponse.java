@@ -1,4 +1,4 @@
-package info.kupczynski.elastic.rx;
+package io.github.brfreitas.elastic.rx;
 
 import org.immutables.value.Value;
 
