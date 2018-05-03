@@ -4,7 +4,7 @@
 
     <groupId>io.github.brfreitas</groupId>
     <artifactId>elastic.rx</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>io.github.brfreitas:elastic.rx</name>
     <description>This project is based on https://github.com/igor-kupczynski/ElasticRxClient
@@ -24,26 +24,6 @@
         <artifactId>oss-parent</artifactId>
         <version>7</version>
     </parent>
-
-    <scm>
-        <connection>scm:git:https://github.com/brfreitas/ElasticRxClient.git</connection>
-        <developerConnection>scm:git:https://github.com/brfreitas/ElasticRxClient.git </developerConnection>
-        <url>https://github.com/brfreitas/ElasticRxClient.git</url>
-    </scm>
-
-    <developers>
-        <developer>
-            <id>brfreitas</id>
-            <name>Bruno Freitas=</name>
-            <email>brunofreitas7@gmail.com </email>
-            <roles>
-                <role>project owner</role>
-                <role>administrator</role>
-                <role>developer</role>
-            </roles>
-            <timezone>-3</timezone>
-        </developer>
-    </developers>
 
 
     <properties>
@@ -121,4 +101,10 @@
         </plugins>
     </build>
 
+
+  <scm>
+    <connection>scm:svn:http://svn.sonatype.org/spice/tags/elastic.rx-1.0.0</connection>
+    <developerConnection>scm:svn:https://svn.sonatype.org/spice/tags/elastic.rx-1.0.0</developerConnection>
+    <url>http://svn.sonatype.org/spice/tags/elastic.rx-1.0.0</url>
+  </scm>
 </project>
